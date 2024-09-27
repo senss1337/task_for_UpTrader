@@ -1,9 +1,7 @@
 #!/bin/bash
 
-# Выполняем миграции
 python manage.py migrate --no-input
 
-# Проверяем переменные окружения и создаем суперпользователя
 if [ -z "$DJANGO_SUPERUSER_USERNAME" ] || [ -z "$DJANGO_SUPERUSER_EMAIL" ] || [ -z "$DJANGO_SUPERUSER_PASSWORD" ]; then
   echo "Отсутствуют необходимые переменные окружения для создания суперпользователя:"
   echo "DJANGO_SUPERUSER_USERNAME: $DJANGO_SUPERUSER_USERNAME"
@@ -23,5 +21,4 @@ if not User.objects.filter(username='$DJANGO_SUPERUSER_USERNAME').exists():
   "
 fi
 
-# Запускаем сервер
 exec python manage.py runserver 0.0.0.0:8000
