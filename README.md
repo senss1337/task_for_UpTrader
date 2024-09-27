@@ -1,8 +1,12 @@
 # task_for_UpTrader
 
-### Simple start:
-- rename example.env to .env
-- docker comose up --build
+### Быстрый старт:
+- переименовать example.env to .env
+- `docker comose up --build`
+
+### Шаблон для добавления элементов в админке:
+![изображение](https://github.com/user-attachments/assets/e4d4d1b9-40a8-4c72-bab5-3d9ae07a70ed)
+
 
 ### Task:
 Нужно сделать django app, который будет реализовывать древовидное меню, соблюдая следующие условия:
