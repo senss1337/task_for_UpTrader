@@ -1,10 +1,10 @@
 # task_for_UpTrader
 
-Simple start:
+### Simple start:
 - rename example.env to .env
 - docker comose up --build
 
-Task:
+### Task:
 Нужно сделать django app, который будет реализовывать древовидное меню, соблюдая следующие условия:
 1) Меню реализовано через template tag
 2) Все, что над выделенным пунктом - развернуто. Первый уровень вложенности под выделенным пунктом тоже развернут.
