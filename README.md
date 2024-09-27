@@ -4,7 +4,7 @@
 - переименовать example.env to .env
 - `docker comose up --build`
 
-### Шаблон для добавления элементов в админке:
+### Шаблон для добавления элементов в админке c привязкой к созданным для теста View:
 ![изображение](https://github.com/user-attachments/assets/e4d4d1b9-40a8-4c72-bab5-3d9ae07a70ed)
 
 
