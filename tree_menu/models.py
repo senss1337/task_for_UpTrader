@@ -22,8 +22,8 @@ class MenuItem(models.Model):
         on_delete=models.CASCADE
     )
     name = models.CharField('Название пункта', max_length=100)
-    named_url = models.CharField('Название URL', max_length=100, blank=True, null=True)
-    url = models.CharField('URL', max_length=200, blank=True, null=True)
+    named_url = models.CharField('Именнованный URL', max_length=100, blank=True, null=True)
+    url = models.CharField('URL без имени', max_length=200, blank=True, null=True)
     parent = models.ForeignKey(
         'self',
         verbose_name='Родительский пункт',
