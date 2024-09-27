@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.urls.exceptions import NoReverseMatch
 
 
 class Menu(models.Model):
@@ -46,9 +47,14 @@ class MenuItem(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        if self.named_url:
-            return reverse(self.named_url)
-        elif self.url:
-            return self.url
+        if hasattr(self, '_parent_cache'):
+            print("[DEBUG] Parent preloaded for:", self.name)
         else:
-            return '#'
+            print("[DEBUG] Parent not preloaded for:", self.name)
+
+        if self.named_url:
+            try:
+                return reverse(self.named_url)
+            except NoReverseMatch:
+                return self.url or '#'
+        return self.url or '#'
